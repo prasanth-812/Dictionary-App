@@ -9,16 +9,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,10 +41,11 @@ public class MainActivity2 extends AppCompatActivity {
     ImageView imageView;
     EditText editText;
     Uri uriProfileImage;
-    ProgressBar progressbar ;
-    String profileImageUrl ;
+    ProgressBar progressbar;
+    String profileImageUrl;
     FirebaseAuth mAuth;
     TextView textView;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,29 +55,33 @@ public class MainActivity2 extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        editText = (EditText) findViewById(R.id.editTextDisplayName) ;
-        imageView = (ImageView) findViewById(R.id.imageView) ;
+        editText = (EditText) findViewById(R.id.editTextDisplayName);
+        imageView = (ImageView) findViewById(R.id.imageView);
         progressbar = findViewById(R.id.progressbar);
-        mAuth = FirebaseAuth.getInstance() ;
-        textView = (TextView) findViewById(R.id.textViewVerified) ;
+        mAuth = FirebaseAuth.getInstance();
+        textView = (TextView) findViewById(R.id.textViewVerified);
+        button = findViewById(R.id.buttonGive);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            showImageChooser();
+                showImageChooser();
             }
         });
 
-        loadUserInformation () ;
 
-        findViewById(R.id.buttonSave).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveUserInformation();
+        loadUserInformation();
+        button.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick (View v){
+        Intent intent = new Intent(MainActivity2.this,MainActivity3.class);
+        startActivity(intent);
+        saveUserInformation();
+        }
+    });
+}
 
-            }
-        });
-    }
+
 
     @Override
     protected void onStart() {

@@ -1,8 +1,5 @@
 package com.example.dictionaryapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -11,6 +8,9 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -36,7 +36,7 @@ public  class SignUp extends AppCompatActivity implements OnClickListener {
      mAuth = FirebaseAuth.getInstance();
 
      findViewById(R.id.buttonSignUp).setOnClickListener(this);
-     findViewById(R.id.buttonNeedSignUp).setOnClickListener(this);
+     findViewById(R.id.buttonAlreadySignUp).setOnClickListener(this);
     }
 
     private void registerUser() {
@@ -79,7 +79,7 @@ public  class SignUp extends AppCompatActivity implements OnClickListener {
                   intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                   startActivity(intent);
               }else {
-                  Toast.makeText(getApplicationContext(), "Some error occured",Toast.LENGTH_SHORT).show();
+                  Toast.makeText(getApplicationContext(), "Some error occurred",Toast.LENGTH_SHORT).show();
                   if (task.getException()  instanceof FirebaseAuthUserCollisionException){
                       Toast.makeText(getApplicationContext(), "You are already registered", Toast.LENGTH_SHORT).show();
                   }else {

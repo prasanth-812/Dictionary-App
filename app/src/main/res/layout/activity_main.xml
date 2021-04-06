@@ -15,8 +15,8 @@
         android:gravity="center"
         android:textSize="30sp"
         android:layout_marginTop="18dp"
-        android:textColor="@color/black"
-        android:background="@color/teal_200"/>
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"/>
 
     <ProgressBar
         android:id="@+id/progressbar"
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Type Your Mail : "
-            android:textColor="@color/black"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="21sp" />
 
         <EditText
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Type Your Password : "
-            android:textColor="@color/black"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="21sp" />
 
         <EditText
@@ -82,7 +82,7 @@
 
 
     <Button
-        android:id="@+id/buttonNeedSignUp"
+        android:id="@+id/NeedSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Don't have an account?Sign Up"

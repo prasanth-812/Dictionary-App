@@ -1,8 +1,5 @@
 package com.example.dictionaryapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -10,6 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextPassword = (EditText) findViewById(R.id.editTextPassword) ;
         progressBar = (ProgressBar) findViewById(R.id.progressbar) ;
 
-        findViewById(R.id.buttonNeedSignUp).setOnClickListener(this);
+        findViewById(R.id.NeedSignUp).setOnClickListener(this);
         findViewById(R.id.buttonLogin).setOnClickListener(this);
 
     }
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.buttonNeedSignUp :
+            case R.id.NeedSignUp:
                  finish();
                 startActivity(new Intent(this,SignUp.class));
 

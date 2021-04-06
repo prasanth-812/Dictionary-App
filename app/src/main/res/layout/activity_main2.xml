@@ -22,7 +22,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="@color/colorPrimaryDark"/>
 
         <ImageView
             android:id="@+id/imageView"
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/buttonSave"
+        android:id="@+id/buttonGive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
